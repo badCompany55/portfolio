@@ -22,19 +22,79 @@
 	.gifHeadCont {
 		width: 100%;
 		text-align: center;
+		margin-bottom: 0px;
+
 		.gifHead {
 			width: 100%;
 			font-size: 5rem;
+			margin-bottom: 0px;
+		}
+	
+		.listGifsCont {
+			ul {
+				width: 80%;
+				list-style: none;
+				justify-content: center;
+				display: flex;
+				flex-wrap:  wrap;
+
+				.listGifs {
+					margin: 5px;
+					padding: 5px;
+				}
+			}
 		}
 	}
 
 	.subCont {
 		width: 47%;
-		min-width: 600px;
+		min-width: 500px;
+		
+		.bottomCont {
+			display: flex;
+			flex-wrap:  wrap;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+
+			.gifs {
+				width: 85%;
+				height: 450px;
+				max-width: 450px;
+			}
+
+			.left{
+				display: flex;
+				align-items: center;
+				width: 5%;
+				height: 50px;
+
+				&:hover {
+					cursor: pointer;
+				}
+			}
+			.right {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 10%;
+				height: 50px;
+
+				&:hover {
+					cursor: pointer;
+				}
+			}
+		}
 	}
 }
 
-.gifs {
-	width: 600px;
-	height: 600px;
+
+.hidden {
+	display: none;
+}
+
+.selected {
+	background-color: rgba(41, 110, 133, 1);
+	color: white;
+	border-radius: 5px;
 }

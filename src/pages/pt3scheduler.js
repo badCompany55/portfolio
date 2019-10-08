@@ -13,6 +13,12 @@ import userFeedbackIMG from "../images/userFeedback.png"
 
 const Pt3Scheduler = () => {
   const [active, setActive] = useState()
+  const [show, setShow] = useState({
+    firstGif: true,
+    secondGif: false,
+    thirdGif: false,
+    fourthGif: false,
+  })
 
   const playGif = e => {
     const target = e.target.id
@@ -21,6 +27,40 @@ const Pt3Scheduler = () => {
   const stopGif = e => {
     const target = e.target.id
     setActive({ [target]: false })
+  }
+
+  const cycleLeft = e => {
+    switch (true) {
+      case show.firstGif:
+        setShow({ ...show, firstGif: false, fourthGif: true })
+        break
+      case show.secondGif:
+        setShow({ ...show, secondGif: false, firstGif: true })
+        break
+      case show.thirdGif:
+        setShow({ ...show, thirdGif: false, secondGif: true })
+        break
+      case show.fourthGif:
+        setShow({ ...show, fourthGif: false, thirdGif: true })
+        break
+    }
+  }
+
+  const cycleRight = e => {
+    switch (true) {
+      case show.firstGif:
+        setShow({ ...show, firstGif: false, secondGif: true })
+        break
+      case show.secondGif:
+        setShow({ ...show, secondGif: false, thirdGif: true })
+        break
+      case show.thirdGif:
+        setShow({ ...show, thirdGif: false, fourthGif: true })
+        break
+      case show.fourthGif:
+        setShow({ ...show, fourthGif: false, firstGif: true })
+        break
+    }
   }
 
   return (
@@ -85,86 +125,179 @@ const Pt3Scheduler = () => {
             </div>
             <div className="gifCont">
               <div className="gifHeadCont">
-                <h2 className="subHeading gifHead">Video Examples</h2>
+                <h2 className="subHeading gifHead">Demonstration</h2>
+                <div className="listGifsCont">
+                  <ul>
+                    <li
+                      className={
+                        show.firstGif
+                          ? "selected listGifs text"
+                          : "listGifs text"
+                      }
+                    >
+                      Contractor Set Schedule
+                    </li>
+                    <li
+                      className={
+                        show.secondGif
+                          ? "selected listGifs text"
+                          : "listGifs text"
+                      }
+                    >
+                      Contractor Confirm / Deny Appointment
+                    </li>
+                    <li
+                      className={
+                        show.thirdGif
+                          ? "selected listGifs text"
+                          : "listGifs text"
+                      }
+                    >
+                      Customer Request Appointment
+                    </li>
+                    <li
+                      className={
+                        show.fourthGif
+                          ? "selected listGifs text"
+                          : "listGifs text"
+                      }
+                    >
+                      Customer Leave Review
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div className="subCont">
-                <h2 className="subHeading">
-                  Contractor Setting Up The Schedule
-                </h2>
-                <p className="text">
-                  Contractor selects days that he/she wants to work and also
-                  selects the time that they are available.
-                </p>
-                <img
-                  id="setSched"
-                  className="gifs"
-                  src={
-                    active && active.setSched
-                      ? contScheduleGIF
-                      : contScheduleIMG
-                  }
-                  alt="calendar"
-                  onMouseEnter={playGif}
-                  onMouseLeave={stopGif}
-                />
+              <div
+                id="firstGif"
+                className={show.firstGif ? "subCont" : "subCont hidden"}
+              >
+                <div className="topCont">
+                  <h2 className="subHeading">
+                    Contractor Setting Up The Schedule
+                  </h2>
+                  <p className="text">
+                    Contractor selects days that he/she wants to work and also
+                    selects the time that they are available.
+                  </p>
+                </div>
+                <div className="bottomCont">
+                  <div className="left" onClick={cycleLeft}>
+                    left
+                  </div>
+                  <img
+                    id="setSched"
+                    className="gifs"
+                    src={
+                      active && active.setSched
+                        ? contScheduleGIF
+                        : contScheduleIMG
+                    }
+                    alt="calendar"
+                    onMouseEnter={playGif}
+                    onMouseLeave={stopGif}
+                  />
+                  <div className="right" onClick={cycleRight}>
+                    {" "}
+                    right{" "}
+                  </div>
+                </div>
               </div>
-              <div className="subCont">
-                <h2 className="subHeading">
-                  Contractor Confirm / Deny Requested Appointment
-                </h2>
-                <p className="text">
-                  Contractor goes through appointments and and can either
-                  confirm or deny them.
-                </p>
-                <img
-                  id="confirmDenySched"
-                  className="gifs"
-                  src={
-                    active && active.confirmDenySched
-                      ? contConfirmDenyGIF
-                      : contConfirmDenyIMG
-                  }
-                  alt="calendar"
-                  onMouseEnter={playGif}
-                  onMouseLeave={stopGif}
-                />
+              <div
+                id="secondGif"
+                className={show.secondGif ? "subCont" : "subCont hidden"}
+              >
+                <div className="topCont">
+                  <h2 className="subHeading">
+                    Contractor Confirm / Deny Requested Appointment
+                  </h2>
+                  <p className="text">
+                    Contractor goes through appointments and and can either
+                    confirm or deny them.
+                  </p>
+                </div>
+                <div className="bottomCont">
+                  <div className="left" onClick={cycleLeft}>
+                    left
+                  </div>
+                  <img
+                    id="confirmDenySched"
+                    className="gifs"
+                    src={
+                      active && active.confirmDenySched
+                        ? contConfirmDenyGIF
+                        : contConfirmDenyIMG
+                    }
+                    alt="calendar"
+                    onMouseEnter={playGif}
+                    onMouseLeave={stopGif}
+                  />
+                  <div className="right" onClick={cycleRight}>
+                    right
+                  </div>
+                </div>
               </div>
-              <div className="subCont">
-                <h2 className="subHeading">
-                  Potential customer requests appointments
-                </h2>
-                <p className="text">
-                  Customer goes through contractors, selects one, and selects
-                  availability.
-                </p>
-                <img
-                  id="userRequestAppoint"
-                  className="gifs"
-                  src={
-                    active && active.userRequestAppoint
-                      ? userRequestAppointGIF
-                      : userRequestAppointIMG
-                  }
-                  alt="calendar"
-                  onMouseEnter={playGif}
-                  onMouseLeave={stopGif}
-                />
+              <div
+                id="thirdGif"
+                className={show.thirdGif ? "subCont" : "subCont hidden"}
+              >
+                <div className="topCont">
+                  <h2 className="subHeading">
+                    Potential customer requests appointments
+                  </h2>
+                  <p className="text">
+                    Customer goes through contractors, selects one, and selects
+                    availability.
+                  </p>
+                </div>
+                <div className="bottomCont">
+                  <div className="left" onClick={cycleLeft}>
+                    left
+                  </div>
+                  <img
+                    id="userRequestAppoint"
+                    className="gifs"
+                    src={
+                      active && active.userRequestAppoint
+                        ? userRequestAppointGIF
+                        : userRequestAppointIMG
+                    }
+                    alt="calendar"
+                    onMouseEnter={playGif}
+                    onMouseLeave={stopGif}
+                  />
+                  <div className="right" onClick={cycleRight}>
+                    right
+                  </div>
+                </div>
               </div>
-              <div className="subCont">
-                <h2 className="subHeading">Customer Review</h2>
-                <p className="text">Customer leaves review of Contractor</p>
-                <img
-                  id="userFeedback"
-                  className="gifs"
-                  src={
-                    active && active.userFeedback
-                      ? userFeedbackGIF
-                      : userFeedbackIMG
-                  }
-                  alt="calendar"
-                  onMouseEnter={playGif}
-                  onMouseLeave={stopGif}
-                />
+              <div
+                id="fourthGif"
+                className={show.fourthGif ? "subCont" : "subCont hidden"}
+              >
+                <div className="topCont">
+                  <h2 className="subHeading">Customer Review</h2>
+                  <p className="text">Customer leaves review of Contractor</p>
+                </div>
+                <div className="bottomCont">
+                  <div className="left" onClick={cycleLeft}>
+                    left
+                  </div>
+                  <img
+                    id="userFeedback"
+                    className="gifs"
+                    src={
+                      active && active.userFeedback
+                        ? userFeedbackGIF
+                        : userFeedbackIMG
+                    }
+                    alt="calendar"
+                    onMouseEnter={playGif}
+                    onMouseLeave={stopGif}
+                  />
+                  <div className="right" onClick={cycleRight}>
+                    right
+                  </div>
+                </div>
               </div>
             </div>
           </div>
