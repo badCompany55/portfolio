@@ -12,3 +12,20 @@
 		font-size: 1.3rem;
 	}
 }
+
+.gifCont {
+	display: flex;
+	flex-wrap:  wrap;
+	justify-content: space-between;
+	width: 100%;
+
+	.subCont {
+		width: 47%;
+		min-width: 600px;
+	}
+}
+
+.gifs {
+	width: 600px;
+	height: 600px;
+}

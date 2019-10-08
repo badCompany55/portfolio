@@ -18,10 +18,10 @@ const Header = () => {
           </div>
           <div className="subNav">
             <div className="mainHeading">
-              <Link to="/resume">Resume</Link>
+              <Link to="/resume">About Me</Link>
             </div>
             <div className="mainHeading">
-              <Link to="/about">About Me</Link>
+              <Link to="/about">Contact</Link>
             </div>
           </div>
         </div>
