@@ -6,6 +6,10 @@ import contScheduleGIF from "../components/gifs/contractorSetSchedule.gif"
 import contScheduleIMG from "../images/contractorSetSchedule.png"
 import contConfirmDenyGIF from "../components/gifs/contractorConfirmDenySched.gif"
 import contConfirmDenyIMG from "../images/contractorConfirmDeny.png"
+import userRequestAppointGIF from "../components/gifs/userRequestAppointment.gif"
+import userRequestAppointIMG from "../images/requestAppointment.png"
+import userFeedbackGIF from "../components/gifs/userFeedback.gif"
+import userFeedbackIMG from "../images/userFeedback.png"
 
 const Pt3Scheduler = () => {
   const [active, setActive] = useState()
@@ -17,7 +21,6 @@ const Pt3Scheduler = () => {
   const stopGif = e => {
     const target = e.target.id
     setActive({ [target]: false })
-    console.log(active)
   }
 
   return (
@@ -81,6 +84,9 @@ const Pt3Scheduler = () => {
               </p>
             </div>
             <div className="gifCont">
+              <div className="gifHeadCont">
+                <h2 className="subHeading gifHead">Video Examples</h2>
+              </div>
               <div className="subCont">
                 <h2 className="subHeading">
                   Contractor Setting Up The Schedule
@@ -117,6 +123,43 @@ const Pt3Scheduler = () => {
                     active && active.confirmDenySched
                       ? contConfirmDenyGIF
                       : contConfirmDenyIMG
+                  }
+                  alt="calendar"
+                  onMouseEnter={playGif}
+                  onMouseLeave={stopGif}
+                />
+              </div>
+              <div className="subCont">
+                <h2 className="subHeading">
+                  Potential customer requests appointments
+                </h2>
+                <p className="text">
+                  Customer goes through contractors, selects one, and selects
+                  availability.
+                </p>
+                <img
+                  id="userRequestAppoint"
+                  className="gifs"
+                  src={
+                    active && active.userRequestAppoint
+                      ? userRequestAppointGIF
+                      : userRequestAppointIMG
+                  }
+                  alt="calendar"
+                  onMouseEnter={playGif}
+                  onMouseLeave={stopGif}
+                />
+              </div>
+              <div className="subCont">
+                <h2 className="subHeading">Customer Review</h2>
+                <p className="text">Customer leaves review of Contractor</p>
+                <img
+                  id="userFeedback"
+                  className="gifs"
+                  src={
+                    active && active.userFeedback
+                      ? userFeedbackGIF
+                      : userFeedbackIMG
                   }
                   alt="calendar"
                   onMouseEnter={playGif}

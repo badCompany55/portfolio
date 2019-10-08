@@ -34,7 +34,7 @@ const IndexPage = () => {
           <div className="subHeading">Full Stack Web Developer</div>
           <p className="text">
             I am focused on creation and inovation through the use of concise
-            programing. I love making beautiful apps that provide a fluid and
+            programing. I love making amazing apps that provide a fluid and
             productive user experience.
           </p>
         </div>

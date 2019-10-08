@@ -16,8 +16,17 @@
 .gifCont {
 	display: flex;
 	flex-wrap:  wrap;
-	justify-content: space-between;
+	justify-content: center;
 	width: 100%;
+
+	.gifHeadCont {
+		width: 100%;
+		text-align: center;
+		.gifHead {
+			width: 100%;
+			font-size: 5rem;
+		}
+	}
 
 	.subCont {
 		width: 47%;
