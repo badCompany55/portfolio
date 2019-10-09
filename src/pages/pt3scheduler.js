@@ -80,7 +80,7 @@ const Pt3Scheduler = () => {
             <p className="text notHidden">
               We were given the task to create a application that would allow
               for scheduling of appointments between a contractor and client
-              completly online. As with many things in the busy lifestyle that
+              completely online. As with many things in the busy lifestyle that
               people lead, one doesn't always have time for a phone conversation
               just for setting an appointment. This app seeks to remedy this
               situation and provide an intuitive interface for both parties in
@@ -182,7 +182,7 @@ const Pt3Scheduler = () => {
                 </div>
                 <div className="bottomCont">
                   <div className="left" onClick={cycleLeft}>
-                    left
+                    <i class="fas fa-chevron-left"></i>
                   </div>
                   <img
                     id="setSched"
@@ -197,8 +197,7 @@ const Pt3Scheduler = () => {
                     onMouseLeave={stopGif}
                   />
                   <div className="right" onClick={cycleRight}>
-                    {" "}
-                    right{" "}
+                    <i class="fas fa-chevron-right"></i>
                   </div>
                 </div>
               </div>
@@ -217,7 +216,7 @@ const Pt3Scheduler = () => {
                 </div>
                 <div className="bottomCont">
                   <div className="left" onClick={cycleLeft}>
-                    left
+                    <i class="fas fa-chevron-left"></i>
                   </div>
                   <img
                     id="confirmDenySched"
@@ -232,7 +231,7 @@ const Pt3Scheduler = () => {
                     onMouseLeave={stopGif}
                   />
                   <div className="right" onClick={cycleRight}>
-                    right
+                    <i class="fas fa-chevron-right"></i>
                   </div>
                 </div>
               </div>
@@ -251,7 +250,7 @@ const Pt3Scheduler = () => {
                 </div>
                 <div className="bottomCont">
                   <div className="left" onClick={cycleLeft}>
-                    left
+                    <i class="fas fa-chevron-left"></i>
                   </div>
                   <img
                     id="userRequestAppoint"
@@ -266,7 +265,7 @@ const Pt3Scheduler = () => {
                     onMouseLeave={stopGif}
                   />
                   <div className="right" onClick={cycleRight}>
-                    right
+                    <i class="fas fa-chevron-right"></i>
                   </div>
                 </div>
               </div>
@@ -280,7 +279,7 @@ const Pt3Scheduler = () => {
                 </div>
                 <div className="bottomCont">
                   <div className="left" onClick={cycleLeft}>
-                    left
+                    <i class="fas fa-chevron-left"></i>
                   </div>
                   <img
                     id="userFeedback"
@@ -295,7 +294,7 @@ const Pt3Scheduler = () => {
                     onMouseLeave={stopGif}
                   />
                   <div className="right" onClick={cycleRight}>
-                    right
+                    <i class="fas fa-chevron-right"></i>
                   </div>
                 </div>
               </div>

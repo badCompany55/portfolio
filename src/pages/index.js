@@ -55,7 +55,9 @@ const IndexPage = () => {
               <div>
                 <p
                   className={
-                    content.pt3Read === true ? "text notHidden" : "text hidden"
+                    content.pt3Read === true
+                      ? "text notHidden"
+                      : "text indexHidden"
                   }
                 >
                   A group of developers were given the task to create a
@@ -94,7 +96,7 @@ const IndexPage = () => {
                   className={
                     content.sleepRead === true
                       ? "text notHidden"
-                      : "text hidden"
+                      : "text indexHidden"
                   }
                 >
                   Sleep is an essencial part of everyones life. However due to
@@ -131,7 +133,7 @@ const IndexPage = () => {
                   className={
                     content.notesRead === true
                       ? "text notHidden"
-                      : "text hidden"
+                      : "text indexHidden"
                   }
                 >
                   Keeping a todo list and reminders is a valid way to stay on

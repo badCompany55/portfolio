@@ -8,6 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import Helmet from "react-helmet"
 
 import Header from "./header"
 import Footer from "./footer.js"
@@ -26,6 +27,13 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <Helmet>
+        {" "}
+        <script
+          src="https://kit.fontawesome.com/7fe8297e16.js"
+          crossorigin="anonymous"
+        ></script>
+      </Helmet>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div>
         <main>{children}</main>
