@@ -29,6 +29,10 @@ const Layout = ({ children }) => {
     <>
       <Helmet>
         {" "}
+        <link
+          href="https://fonts.googleapis.com/css?family=Big+Shoulders+Display|Open+Sans|Roboto&display=swap"
+          rel="stylesheet"
+        />
         <script
           src="https://kit.fontawesome.com/7fe8297e16.js"
           crossorigin="anonymous"

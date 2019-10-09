@@ -1,3 +1,6 @@
+.appHeading {
+	font-size: 2.5rem;
+}
 .appBody {
 	p {
 		font-size: 1.5rem;
@@ -10,6 +13,17 @@
 	
 	p {
 		font-size: 1.3rem;
+	}
+	.repo {
+		display: flex;
+		flex-wrap:  wrap;
+		justify-content: space-around;
+		margin-top: 20px;
+		font-size: 1.8rem;
+
+		.github, .website {
+			text-decoration: underline;
+		}
 	}
 }
 
@@ -28,6 +42,7 @@
 			width: 100%;
 			font-size: 5rem;
 			margin-bottom: 0px;
+			margin-top: 18px;
 		}
 	
 		.listGifsCont {
@@ -40,6 +55,7 @@
 				padding: 0px;
 
 				.listGifs {
+					font-size: 1.2rem;
 					padding: 5px;
 					font-weight: bold;
 				}

@@ -68,7 +68,7 @@ const Pt3Scheduler = () => {
       <div className="main">
         <div className="appCont">
           <div class="intro">
-            <h2 className="mainHeading">
+            <h2 className="mainHeading appHeading">
               A scheduler app for the busy contractor and client
             </h2>
             <div className="subHeading">
@@ -122,6 +122,18 @@ const Pt3Scheduler = () => {
                 transitions, etc, the GSAP library was used as well a fair
                 amount of standard css animations.
               </p>
+            </div>
+            <div className="repo subHeading">
+              <div className="github">
+                The <strong>Github</strong> repo can be found{" "}
+                <a href="https://github.com/pt3-labs-contractor">Here</a>
+              </div>
+              <div className="website">
+                The <strong>Deployed</strong> website can be found{" "}
+                <a href="https://affectionate-almeida-c22cb1.netlify.com/">
+                  Here
+                </a>
+              </div>
             </div>
             <div className="gifCont">
               <div className="gifHeadCont">
