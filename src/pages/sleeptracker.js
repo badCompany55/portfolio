@@ -1,5 +1,9 @@
 import React from "react"
 import Layout from "../components/layout.js"
+import SleepTrackInitialImg from "../components/imgs/sleepTrackInital.js"
+import SleepTrackMoodDataImg from "../components/imgs/sleepTrackMoodData.js"
+import SleepTrackChartImg from "../components/imgs/sleepTrackChart.js"
+import SleepTrackSleepDataImg from "../components/imgs/sleepTrackSleepData.js"
 import "../styles/apps.scss"
 
 const SleepTracker = () => {
@@ -8,14 +12,14 @@ const SleepTracker = () => {
       <div className="main">
         <div className="appCont">
           <div class="intro">
-            <h2 className="mainHeading">Sleep Tracking App</h2>
+            <h2 className="mainHeading appHeading">Sleep Tracking App</h2>
             <div className="subHeading">
               Provides insights into ones sleep patterns and helps analyze the
               optimal sleep duration per individual
             </div>
           </div>
           <div class="appBody">
-            <p className="text">
+            <p className="text notHidden">
               Sleep is an essencial part of everyones life. However due to the
               fast paced lifestyle, getting the right amount of sleep, let alone
               knowing the right amount that one needs in order to function at
@@ -53,6 +57,19 @@ const SleepTracker = () => {
                   <li>styled-components</li>
                 </ul>
               </p>
+            </div>
+            <div className="repo subHeading">
+              <div className="github">
+                The <strong>Github</strong> repo can be found{" "}
+                <a href="https://github.com/sleep-tracker-pt">Here</a>
+              </div>
+            </div>
+            <div className="screenshots">
+              <div className="subHeading gifHead"> Screen Shots</div>
+              <SleepTrackInitialImg />
+              <SleepTrackChartImg />
+              <SleepTrackSleepDataImg />
+              <SleepTrackMoodDataImg />
             </div>
           </div>
         </div>

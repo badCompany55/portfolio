@@ -135,3 +135,21 @@
 	color: rgba(41, 110, 133, 1);
 	}
 }
+
+.screenshots {
+	display: flex;
+	flex-wrap:  wrap;
+	justify-content: space-around;
+	margin-bottom: 20px;
+
+	img {
+		margin-top: 20px;
+	}
+
+	.gifHead {
+		font-size: 5rem;
+		width: 100%;
+		text-align: center;
+		margin-top: 25px;
+	}
+}

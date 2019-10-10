@@ -1,8 +1,59 @@
 import React from "react"
+import { useState } from "react"
 import Layout from "../components/layout.js"
 import "../styles/apps.scss"
 
 const NoteTaker = () => {
+  const [active, setActive] = useState()
+  const [show, setShow] = useState({
+    firstGif: true,
+    secondGif: false,
+    thirdGif: false,
+    fourthGif: false,
+  })
+
+  const playGif = e => {
+    const target = e.target.id
+    setActive({ [target]: true })
+  }
+  const stopGif = e => {
+    const target = e.target.id
+    setActive({ [target]: false })
+  }
+
+  const cycleLeft = e => {
+    switch (true) {
+      case show.firstGif:
+        setShow({ ...show, firstGif: false, fourthGif: true })
+        break
+      case show.secondGif:
+        setShow({ ...show, secondGif: false, firstGif: true })
+        break
+      case show.thirdGif:
+        setShow({ ...show, thirdGif: false, secondGif: true })
+        break
+      case show.fourthGif:
+        setShow({ ...show, fourthGif: false, thirdGif: true })
+        break
+    }
+  }
+
+  const cycleRight = e => {
+    switch (true) {
+      case show.firstGif:
+        setShow({ ...show, firstGif: false, secondGif: true })
+        break
+      case show.secondGif:
+        setShow({ ...show, secondGif: false, thirdGif: true })
+        break
+      case show.thirdGif:
+        setShow({ ...show, thirdGif: false, fourthGif: true })
+        break
+      case show.fourthGif:
+        setShow({ ...show, fourthGif: false, firstGif: true })
+        break
+    }
+  }
   return (
     <Layout>
       <div className="main">
