@@ -1,0 +1,39 @@
+.contactPageCont {
+	display: flex;
+	flex-wrap:  wrap;
+	justify-content: space-around;
+	align-items: center;
+	margin: 15px;
+	height: 85vh;
+	min-height: 400px;
+
+	.contactPageSplit {
+		display: flex;
+		flex-wrap:  wrap;
+		width: 45%;
+		align-items: center;
+		height: 400px;
+
+		a {
+			width: 100%;
+			text-align: right;
+
+			.fas, .fab {
+				font-size: 4rem;
+			}
+		}
+
+	}
+	.split {
+		border-right: 2px solid rgba(41, 110, 133, 1);
+		height: 400px;
+	}
+
+	.formCont {
+		display: flex;
+		flex-wrap:  wrap;
+		align-items: center;
+		width: 45%;
+		height: 400px;
+	}
+}

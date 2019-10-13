@@ -12,9 +12,9 @@ const Header = () => {
         </div>
         <div className="nav">
           <div className="subNav iconSubNav">
-            <a href="#">
+            <Link to="/contact">
               <i className="fas fa-envelope-square"></i>
-            </a>
+            </Link>
             <a href="https://github.com/badCompany55">
               <i className="fab fa-github-square"></i>
             </a>
@@ -24,10 +24,10 @@ const Header = () => {
           </div>
           <div className="subNav">
             <div className="mainHeading">
-              <Link to="/resume">About Me</Link>
+              <Link to="/about">About Me</Link>
             </div>
             <div className="mainHeading">
-              <Link to="/about">Contact</Link>
+              <Link to="/contact">Contact</Link>
             </div>
           </div>
         </div>
