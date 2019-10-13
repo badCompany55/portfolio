@@ -12,9 +12,15 @@ const Header = () => {
         </div>
         <div className="nav">
           <div className="subNav iconSubNav">
-            <i className="fas fa-envelope-square"></i>
-            <i className="fab fa-github-square"></i>
-            <i className="fab fa-linkedin"></i>
+            <a href="#">
+              <i className="fas fa-envelope-square"></i>
+            </a>
+            <a href="https://github.com/badCompany55">
+              <i className="fab fa-github-square"></i>
+            </a>
+            <a href="#">
+              <i className="fab fa-linkedin"></i>
+            </a>
           </div>
           <div className="subNav">
             <div className="mainHeading">
@@ -26,31 +32,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      {/* <div */}
-      {/*   style={{ */}
-      {/*     margin: `0 auto`, */}
-      {/*     maxWidth: 960, */}
-      {/*     padding: `1.45rem 1.0875rem`, */}
-      {/*   }} */}
-      {/* > */}
-      {/*   <h1 style={{ margin: 0 }}> */}
-      {/*     <Link */}
-      {/*       to="/" */}
-      {/*       style={{ */}
-      {/*         color: `white`, */}
-      {/*         textDecoration: `none`, */}
-      {/*       }} */}
-      {/*     > */}
-      {/*       {siteTitle} */}
-      {/*     </Link> */}
-      {/*   </h1> */}
-      {/* </div> */}
     </header>
   )
 }
-
-// style={{
-// 	background: `rebeccapurple`,
-// 		marginBottom: `1.45rem`,
-// }}
 export default Header

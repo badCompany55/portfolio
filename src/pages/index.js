@@ -83,6 +83,37 @@ const IndexPage = () => {
           <div className="appCont">
             <div className="intro">
               <h2 className="mainHeading headLink">
+                <Link to="/notetaker">Note Taking App</Link>
+              </h2>
+              <div className="subHeading">
+                A implementation of reminders and notes in a web app
+              </div>
+            </div>
+            <div className="appBody">
+              <div>
+                <p
+                  className={
+                    content.notesRead === true
+                      ? "text notHidden"
+                      : "text indexHidden"
+                  }
+                >
+                  Keeping a todo list and reminders is a valid way to stay on
+                  track with the goals and tasks that need to be completed
+                  during the day. This app offers a way to do this and is
+                  accessible anywhere the one has an internet connection.
+                </p>
+              </div>
+              <div className="link">
+                <Link to="/notetaker">
+                  <NoteTakingImg />
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="appCont">
+            <div className="intro">
+              <h2 className="mainHeading headLink">
                 <Link to="/sleeptracker">Sleep Tracking App</Link>
               </h2>
               <div className="subHeading">
@@ -114,37 +145,6 @@ const IndexPage = () => {
               <div className="link">
                 <Link to="/sleeptracker">
                   <SleepTrackerImg />
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="appCont">
-            <div className="intro">
-              <h2 className="mainHeading headLink">
-                <Link to="/notetaker">Note Taking App</Link>
-              </h2>
-              <div className="subHeading">
-                A implementation of reminders and notes in a web app
-              </div>
-            </div>
-            <div className="appBody">
-              <div>
-                <p
-                  className={
-                    content.notesRead === true
-                      ? "text notHidden"
-                      : "text indexHidden"
-                  }
-                >
-                  Keeping a todo list and reminders is a valid way to stay on
-                  track with the goals and tasks that need to be completed
-                  during the day. This app offers a way to do this and is
-                  accessible anywhere the one has an internet connection.
-                </p>
-              </div>
-              <div className="link">
-                <Link to="/notetaker">
-                  <NoteTakingImg />
                 </Link>
               </div>
             </div>

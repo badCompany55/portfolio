@@ -43,6 +43,8 @@ const Pt3Scheduler = () => {
       case show.fourthGif:
         setShow({ ...show, fourthGif: false, thirdGif: true })
         break
+      default:
+        setShow({ ...show, firstGif: false, fourthGif: true })
     }
   }
 
@@ -60,6 +62,8 @@ const Pt3Scheduler = () => {
       case show.fourthGif:
         setShow({ ...show, fourthGif: false, firstGif: true })
         break
+      default:
+        setShow({ ...show, firstGif: false, secondGif: true })
     }
   }
 
