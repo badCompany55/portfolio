@@ -1,0 +1,40 @@
+.aboutCont {
+	width: 75%;
+	max-width: 700px;
+	margin: 0 auto;
+	height: 80vh;
+
+	.aboutPar {
+		border-bottom: 5px solid black;
+		border-radius: 5px;
+
+		.aboutHead {
+			font-size: 3rem;
+		}
+
+		.about {
+			font-size: 1.5rem;
+		}
+
+	}
+	.skillsCont {
+
+		.skills {
+			font-size: 2.5rem;
+			text-align: center;
+		}
+
+		ul {
+			display: flex;
+			flex-wrap:  wrap;
+			list-style: none;
+			justify-content: space-around;
+
+			li {
+				font-size: 4rem;
+			}
+		}
+		
+	}
+}
+		
