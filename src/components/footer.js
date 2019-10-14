@@ -5,9 +5,15 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="iconCont">
-        <i class="fas fa-envelope-square"></i>
-        <i class="fab fa-github-square"></i>
-        <i class="fab fa-linkedin"></i>
+        <a href="mailto:zachirvin45@gmail.com">
+          <i className="fas fa-envelope-square"></i>
+        </a>
+        <a href="https://github.com/badCompany55">
+          <i className="fab fa-github-square"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/zach-irvin-2373a1150/">
+          <i className="fab fa-linkedin"></i>
+        </a>
       </div>
       <div className="copyright text">
         © 2019 - Zachery Irvin - zachirvin.com

@@ -20,6 +20,12 @@
 
 			.fas, .fab {
 				font-size: 4rem;
+				color: gray;
+				
+				&:hover {
+					cursor: pointer;
+					color: black;
+				}
 			}
 		}
 

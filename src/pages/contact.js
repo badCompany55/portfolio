@@ -19,7 +19,7 @@ const ContactForm = () => {
         </div>
         <div className="split"></div>
         <div class="formCont">
-          <form name="contact" method="POST">
+          <form name="contact" method="POST" data-netlify="true">
             <div className="infoCont">
               <input type="text" placeholder="Name" />
             </div>
