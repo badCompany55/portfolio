@@ -19,7 +19,13 @@ const ContactForm = () => {
         </div>
         <div className="split"></div>
         <div class="formCont">
-          <form name="contact" method="post" data-netlify="true">
+          <form
+            name="contact"
+            method="post"
+            data-netlify-honeypot="bot-field"
+            data-netlify="true"
+          >
+            <input type="hidden" name="bot-field" />
             <div className="infoCont">
               <input type="text" placeholder="Name" />
             </div>
