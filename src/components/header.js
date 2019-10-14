@@ -12,9 +12,9 @@ const Header = () => {
         </div>
         <div className="nav">
           <div className="subNav iconSubNav">
-            <Link to="/contact">
+            <a href="mailto:zachirvin45@gmail">
               <i className="fas fa-envelope-square"></i>
-            </Link>
+            </a>
             <a href="https://github.com/badCompany55">
               <i className="fab fa-github-square"></i>
             </a>

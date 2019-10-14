@@ -2,19 +2,31 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
+/*
+ * This component is built using `gatsby-image` to automatically serve optimized
+ * images with lazy loading and reduced file sizes. The image is loaded using a
+ * `useStaticQuery`, which allows us to load the image from directly within this
+ * component, rather than having to pass the image data down from pages.
+ *
+ * For more information, see the docs:
+ * - `gatsby-image`: https://gatsby.dev/gatsby-image
+ * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
+ */
+
 const NoteTakingImg = () => {
   const data = useStaticQuery(graphql`
     query {
-      noteTakingImg: file(relativePath: { eq: "noteTakingApp.png" }) {
+      pt3Image: file(relativePath: { eq: "noteTakingApp.png" }) {
         childImageSharp {
-          fixed(width: 195, height: 195) {
+          fixed(width: 200, height: 200) {
             ...GatsbyImageSharpFixed
           }
         }
       }
     }
   `)
-  return <Img fixed={data.noteTakingImg.childImageSharp.fixed} />
+
+  return <Img fixed={data.pt3Image.childImageSharp.fixed} />
 }
 
 export default NoteTakingImg

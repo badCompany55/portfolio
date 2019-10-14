@@ -105,9 +105,7 @@ const IndexPage = () => {
                 </p>
               </div>
               <div className="link">
-                <Link to="/notetaker">
-                  <NoteTakingImg />
-                </Link>
+                <Link to="/notetaker">{<NoteTakingImg />}</Link>
               </div>
             </div>
           </div>
