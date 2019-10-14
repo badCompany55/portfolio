@@ -28,10 +28,10 @@ const ContactForm = () => {
           >
             <input type="hidden" name="form-name" value="contact" />
             <div className="infoCont">
-              <input type="text" placeholder="Name" />
+              <input type="text" name="name" required placeholder="Name" />
             </div>
             <div className="infoCont">
-              <input type="email" placeholder="Email" />
+              <input type="email" name="email" required placeholder="Email" />
             </div>
             <div className="infoCont">
               <textarea
@@ -39,6 +39,7 @@ const ContactForm = () => {
                 name="message"
                 cols="30"
                 rows="10"
+                required
                 placeholder="Message"
               ></textarea>
             </div>
