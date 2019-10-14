@@ -20,6 +20,7 @@ const ContactForm = () => {
         <div className="split"></div>
         <div class="formCont">
           <form
+            action="/formSuccess"
             name="contact"
             method="post"
             data-netlify-honeypot="bot-field"
