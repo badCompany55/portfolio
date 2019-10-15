@@ -38,20 +38,20 @@ const Pt3Scheduler = () => {
   const cycleLeft = e => {
     const id = e.target.id
     if (id === "firstGifLeft") {
-      TweenMax.from(ref4.current, 1, { x: 500 })
-      TweenMax.to(ref4.current, 1, { x: 0 })
+      TweenMax.from(ref4.current, 1, { x: 0 })
+      TweenMax.to(ref4.current, 1, { x: -850 })
     }
     if (id === "secondGifLeft") {
-      TweenMax.from(ref1.current, 1, { x: 500 })
-      TweenMax.to(ref1.current, 1, { x: 0 })
+      TweenMax.from(ref1.current, 1, { x: 0 })
+      TweenMax.to(ref1.current, 1, { x: -850 })
     }
     if (id === "thirdGifLeft") {
-      TweenMax.from(ref2.current, 1, { x: 500 })
-      TweenMax.to(ref2.current, 1, { x: 0 })
+      TweenMax.from(ref2.current, 1, { x: 0 })
+      TweenMax.to(ref2.current, 1, { x: -850 })
     }
     if (id === "fourthGifLeft") {
-      TweenMax.from(ref3.current, 1, { x: 500 })
-      TweenMax.to(ref3.current, 1, { x: 0 })
+      TweenMax.from(ref3.current, 1, { x: 0 })
+      TweenMax.to(ref3.current, 1, { x: -850 })
     }
     switch (true) {
       case show.firstGif:
@@ -74,20 +74,20 @@ const Pt3Scheduler = () => {
   const cycleRight = e => {
     const id = e.target.id
     if (id === "firstGifRight") {
-      TweenMax.from(ref2.current, 1, { x: -500 })
-      TweenMax.to(ref2.current, 1, { x: 0 })
+      TweenMax.from(ref2.current, 1, { x: -1650 })
+      TweenMax.to(ref2.current, 1, { x: -850 })
     }
     if (id === "secondGifRight") {
-      TweenMax.from(ref3.current, 1, { x: -500 })
-      TweenMax.to(ref3.current, 1, { x: 0 })
+      TweenMax.from(ref3.current, 1, { x: -1650 })
+      TweenMax.to(ref3.current, 1, { x: -850 })
     }
     if (id === "thirdGifRight") {
-      TweenMax.from(ref4.current, 1, { x: -500 })
-      TweenMax.to(ref4.current, 1, { x: 0 })
+      TweenMax.from(ref4.current, 1, { x: -1650 })
+      TweenMax.to(ref4.current, 1, { x: -850 })
     }
     if (id === "fourthGifRight") {
-      TweenMax.from(ref1.current, 1, { x: -500 })
-      TweenMax.to(ref1.current, 1, { x: 0 })
+      TweenMax.from(ref1.current, 1, { x: -1650 })
+      TweenMax.to(ref1.current, 1, { x: -850 })
     }
 
     switch (true) {
@@ -241,19 +241,22 @@ const Pt3Scheduler = () => {
                   <div className="left" onClick={cycleLeft}>
                     <i id="firstGifLeft" class="fas fa-chevron-left"></i>
                   </div>
-                  <img
-                    id="setSched"
-                    className="gifs"
-                    ref={ref1}
-                    src={
-                      active && active.setSched
-                        ? contScheduleGIF
-                        : contScheduleIMG
-                    }
-                    alt="calendar"
-                    onMouseEnter={playGif}
-                    onMouseLeave={stopGif}
-                  />
+                  <div className="imgCont" ref={ref1}>
+                    <img src={contConfirmDenyIMG} className="gifs" alt="" />
+                    <img
+                      id="setSched"
+                      className="gifs"
+                      src={
+                        active && active.setSched
+                          ? contScheduleGIF
+                          : contScheduleIMG
+                      }
+                      alt="calendar"
+                      onMouseEnter={playGif}
+                      onMouseLeave={stopGif}
+                    />
+                    <img className="gifs" src={userFeedbackIMG} alt="" />
+                  </div>
                   <div className="right" onClick={cycleRight}>
                     <i id="firstGifRight" class="fas fa-chevron-right"></i>
                   </div>
@@ -276,19 +279,22 @@ const Pt3Scheduler = () => {
                   <div className="left" onClick={cycleLeft}>
                     <i id="secondGifLeft" class="fas fa-chevron-left"></i>
                   </div>
-                  <img
-                    id="confirmDenySched"
-                    className="gifs"
-                    ref={ref2}
-                    src={
-                      active && active.confirmDenySched
-                        ? contConfirmDenyGIF
-                        : contConfirmDenyIMG
-                    }
-                    alt="calendar"
-                    onMouseEnter={playGif}
-                    onMouseLeave={stopGif}
-                  />
+                  <div className="imgCont" ref={ref2}>
+                    <img src={userRequestAppointIMG} className="gifs" alt="" />
+                    <img
+                      id="confirmDenySched"
+                      className="gifs"
+                      src={
+                        active && active.confirmDenySched
+                          ? contConfirmDenyGIF
+                          : contConfirmDenyIMG
+                      }
+                      alt="calendar"
+                      onMouseEnter={playGif}
+                      onMouseLeave={stopGif}
+                    />
+                    <img src={contScheduleIMG} className="gifs" alt="" />
+                  </div>
                   <div className="right" onClick={cycleRight}>
                     <i id="secondGifRight" class="fas fa-chevron-right"></i>
                   </div>
@@ -311,19 +317,22 @@ const Pt3Scheduler = () => {
                   <div className="left" onClick={cycleLeft}>
                     <i id="thirdGifLeft" class="fas fa-chevron-left"></i>
                   </div>
-                  <img
-                    id="userRequestAppoint"
-                    className="gifs"
-                    ref={ref3}
-                    src={
-                      active && active.userRequestAppoint
-                        ? userRequestAppointGIF
-                        : userRequestAppointIMG
-                    }
-                    alt="calendar"
-                    onMouseEnter={playGif}
-                    onMouseLeave={stopGif}
-                  />
+                  <div className="imgCont" ref={ref3}>
+                    <img src={userFeedbackIMG} className="gifs" alt="" />
+                    <img
+                      id="userRequestAppoint"
+                      className="gifs"
+                      src={
+                        active && active.userRequestAppoint
+                          ? userRequestAppointGIF
+                          : userRequestAppointIMG
+                      }
+                      alt="calendar"
+                      onMouseEnter={playGif}
+                      onMouseLeave={stopGif}
+                    />
+                    <img src={contConfirmDenyIMG} className="gifs" />
+                  </div>
                   <div className="right" onClick={cycleRight}>
                     <i id="thirdGifRight" class="fas fa-chevron-right"></i>
                   </div>
@@ -341,19 +350,22 @@ const Pt3Scheduler = () => {
                   <div className="left" onClick={cycleLeft}>
                     <i id="fourthGifLeft" class="fas fa-chevron-left"></i>
                   </div>
-                  <img
-                    id="userFeedback"
-                    className="gifs"
-                    ref={ref4}
-                    src={
-                      active && active.userFeedback
-                        ? userFeedbackGIF
-                        : userFeedbackIMG
-                    }
-                    alt="calendar"
-                    onMouseEnter={playGif}
-                    onMouseLeave={stopGif}
-                  />
+                  <div className="imgCont" ref={ref4}>
+                    <img className="gifs" src={contScheduleIMG} alt="" />
+                    <img
+                      id="userFeedback"
+                      className="gifs"
+                      src={
+                        active && active.userFeedback
+                          ? userFeedbackGIF
+                          : userFeedbackIMG
+                      }
+                      alt="calendar"
+                      onMouseEnter={playGif}
+                      onMouseLeave={stopGif}
+                    />
+                    <img className="gifs" src={userRequestAppointIMG} alt="" />
+                  </div>
                   <div className="right" onClick={cycleRight}>
                     <i id="fourthGifRight" class="fas fa-chevron-right"></i>
                   </div>
