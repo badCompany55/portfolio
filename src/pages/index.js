@@ -1,6 +1,7 @@
 import React from "react"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { Link } from "gatsby"
+import { TweenMax } from "gsap"
 
 import Layout from "../components/layout"
 import Pt3SchedulerImg from "../components/imgs/pt3image.js"
@@ -15,15 +16,52 @@ const IndexPage = () => {
     sleepRead: false,
     notesRead: false,
   })
+
+  const ref1 = useRef(null)
+  const ref2 = useRef(null)
+  // const ref3 = useRef(null)
+
+  // const dropDown = () => {
+  //   console.log(content)
+  //   switch (true) {
+  //     case content.pt3Read == false:
+  //       TweenMax.to(ref1.current, 0.75, { height: "auto" })
+  //       TweenMax.from(ref1.current, 0.75, { height: "70px" })
+  //       break
+  //     case content.sleepRead == false:
+  //       console.log(ref2.current)
+  //       TweenMax.to(ref2.current, 0.75, { height: "auto" })
+  //       TweenMax.from(ref2.current, 0.75, { height: "70px" })
+  //     default:
+  //       TweenMax.to(ref1.current, 0.75, { height: "70px" })
+  //       TweenMax.to(ref2.current, 0.75, { height: "70px" })
+  //     // TweenMax.to(ref3.current, 0.75, { height: "70px" })
+  //   }
+  // }
+
   const showContent = e => {
+    console.log(content)
     const clickedCont = e.target.id
-    console.log(content[clickedCont])
-    if (content[clickedCont] === false) {
-      setContent({ [clickedCont]: true })
-      console.log(content)
+    if (!content[clickedCont]) {
+      setContent({ ...content, [clickedCont]: true })
+      if (clickedCont === "pt3Read") {
+        TweenMax.to(ref1.current, 0.75, { height: "auto" })
+        TweenMax.from(ref1.current, 0.75, { height: "70px" })
+      }
+      if (clickedCont === "sleepRead") {
+        TweenMax.to(ref2.current, 0.75, { height: "auto" })
+        TweenMax.from(ref2.current, 0.75, { height: "70px" })
+      }
     } else {
-      setContent({ [clickedCont]: false })
+      setContent({ ...content, [clickedCont]: false })
+      if (clickedCont === "pt3Read") {
+        TweenMax.to(ref1.current, 0.75, { height: "70px" })
+      }
+      if (clickedCont === "sleepRead") {
+        TweenMax.to(ref2.current, 0.75, { height: "70px" })
+      }
     }
+    // dropDown()
   }
   return (
     <Layout>
@@ -59,6 +97,7 @@ const IndexPage = () => {
                       ? "text notHidden"
                       : "text indexHidden"
                   }
+                  ref={ref1}
                 >
                   We were given the task to create a application that would
                   allow for scheduling of appointments between a contractor and
@@ -127,6 +166,7 @@ const IndexPage = () => {
                       ? "text notHidden"
                       : "text indexHidden"
                   }
+                  ref={ref2}
                 >
                   Sleep is an essencial part of everyones life. However due to
                   the fast paced lifestyle, getting the right amount of sleep,
