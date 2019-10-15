@@ -1,5 +1,5 @@
 import React from "react"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import Layout from "../components/layout.js"
 import "../styles/apps.scss"
 import contScheduleGIF from "../components/gifs/contractorSetSchedule.gif"
@@ -10,6 +10,7 @@ import userRequestAppointGIF from "../components/gifs/userRequestAppointment.gif
 import userRequestAppointIMG from "../images/requestAppointment.png"
 import userFeedbackGIF from "../components/gifs/userFeedback.gif"
 import userFeedbackIMG from "../images/userFeedback.png"
+import { TweenMax } from "gsap"
 
 const Pt3Scheduler = () => {
   const [active, setActive] = useState()
@@ -19,6 +20,11 @@ const Pt3Scheduler = () => {
     thirdGif: false,
     fourthGif: false,
   })
+
+  const ref1 = useRef(null)
+  const ref2 = useRef(null)
+  const ref3 = useRef(null)
+  const ref4 = useRef(null)
 
   const playGif = e => {
     const target = e.target.id
@@ -30,6 +36,23 @@ const Pt3Scheduler = () => {
   }
 
   const cycleLeft = e => {
+    const id = e.target.id
+    if (id === "firstGifLeft") {
+      TweenMax.from(ref4.current, 1, { x: 500 })
+      TweenMax.to(ref4.current, 1, { x: 0 })
+    }
+    if (id === "secondGifLeft") {
+      TweenMax.from(ref1.current, 1, { x: 500 })
+      TweenMax.to(ref1.current, 1, { x: 0 })
+    }
+    if (id === "thirdGifLeft") {
+      TweenMax.from(ref2.current, 1, { x: 500 })
+      TweenMax.to(ref2.current, 1, { x: 0 })
+    }
+    if (id === "fourthGifLeft") {
+      TweenMax.from(ref3.current, 1, { x: 500 })
+      TweenMax.to(ref3.current, 1, { x: 0 })
+    }
     switch (true) {
       case show.firstGif:
         setShow({ ...show, firstGif: false, fourthGif: true })
@@ -49,6 +72,24 @@ const Pt3Scheduler = () => {
   }
 
   const cycleRight = e => {
+    const id = e.target.id
+    if (id === "firstGifRight") {
+      TweenMax.from(ref2.current, 1, { x: -500 })
+      TweenMax.to(ref2.current, 1, { x: 0 })
+    }
+    if (id === "secondGifRight") {
+      TweenMax.from(ref3.current, 1, { x: -500 })
+      TweenMax.to(ref3.current, 1, { x: 0 })
+    }
+    if (id === "thirdGifRight") {
+      TweenMax.from(ref4.current, 1, { x: -500 })
+      TweenMax.to(ref4.current, 1, { x: 0 })
+    }
+    if (id === "fourthGifRight") {
+      TweenMax.from(ref1.current, 1, { x: -500 })
+      TweenMax.to(ref1.current, 1, { x: 0 })
+    }
+
     switch (true) {
       case show.firstGif:
         setShow({ ...show, firstGif: false, secondGif: true })
@@ -198,11 +239,12 @@ const Pt3Scheduler = () => {
                 </div>
                 <div className="bottomCont">
                   <div className="left" onClick={cycleLeft}>
-                    <i class="fas fa-chevron-left"></i>
+                    <i id="firstGifLeft" class="fas fa-chevron-left"></i>
                   </div>
                   <img
                     id="setSched"
                     className="gifs"
+                    ref={ref1}
                     src={
                       active && active.setSched
                         ? contScheduleGIF
@@ -213,7 +255,7 @@ const Pt3Scheduler = () => {
                     onMouseLeave={stopGif}
                   />
                   <div className="right" onClick={cycleRight}>
-                    <i class="fas fa-chevron-right"></i>
+                    <i id="firstGifRight" class="fas fa-chevron-right"></i>
                   </div>
                 </div>
               </div>
@@ -232,11 +274,12 @@ const Pt3Scheduler = () => {
                 </div>
                 <div className="bottomCont">
                   <div className="left" onClick={cycleLeft}>
-                    <i class="fas fa-chevron-left"></i>
+                    <i id="secondGifLeft" class="fas fa-chevron-left"></i>
                   </div>
                   <img
                     id="confirmDenySched"
                     className="gifs"
+                    ref={ref2}
                     src={
                       active && active.confirmDenySched
                         ? contConfirmDenyGIF
@@ -247,7 +290,7 @@ const Pt3Scheduler = () => {
                     onMouseLeave={stopGif}
                   />
                   <div className="right" onClick={cycleRight}>
-                    <i class="fas fa-chevron-right"></i>
+                    <i id="secondGifRight" class="fas fa-chevron-right"></i>
                   </div>
                 </div>
               </div>
@@ -266,11 +309,12 @@ const Pt3Scheduler = () => {
                 </div>
                 <div className="bottomCont">
                   <div className="left" onClick={cycleLeft}>
-                    <i class="fas fa-chevron-left"></i>
+                    <i id="thirdGifLeft" class="fas fa-chevron-left"></i>
                   </div>
                   <img
                     id="userRequestAppoint"
                     className="gifs"
+                    ref={ref3}
                     src={
                       active && active.userRequestAppoint
                         ? userRequestAppointGIF
@@ -281,7 +325,7 @@ const Pt3Scheduler = () => {
                     onMouseLeave={stopGif}
                   />
                   <div className="right" onClick={cycleRight}>
-                    <i class="fas fa-chevron-right"></i>
+                    <i id="thirdGifRight" class="fas fa-chevron-right"></i>
                   </div>
                 </div>
               </div>
@@ -295,11 +339,12 @@ const Pt3Scheduler = () => {
                 </div>
                 <div className="bottomCont">
                   <div className="left" onClick={cycleLeft}>
-                    <i class="fas fa-chevron-left"></i>
+                    <i id="fourthGifLeft" class="fas fa-chevron-left"></i>
                   </div>
                   <img
                     id="userFeedback"
                     className="gifs"
+                    ref={ref4}
                     src={
                       active && active.userFeedback
                         ? userFeedbackGIF
@@ -310,7 +355,7 @@ const Pt3Scheduler = () => {
                     onMouseLeave={stopGif}
                   />
                   <div className="right" onClick={cycleRight}>
-                    <i class="fas fa-chevron-right"></i>
+                    <i id="fourthGifRight" class="fas fa-chevron-right"></i>
                   </div>
                 </div>
               </div>

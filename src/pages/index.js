@@ -21,27 +21,13 @@ const IndexPage = () => {
   const ref2 = useRef(null)
   // const ref3 = useRef(null)
 
-  // const dropDown = () => {
-  //   console.log(content)
-  //   switch (true) {
-  //     case content.pt3Read == false:
-  //       TweenMax.to(ref1.current, 0.75, { height: "auto" })
-  //       TweenMax.from(ref1.current, 0.75, { height: "70px" })
-  //       break
-  //     case content.sleepRead == false:
-  //       console.log(ref2.current)
-  //       TweenMax.to(ref2.current, 0.75, { height: "auto" })
-  //       TweenMax.from(ref2.current, 0.75, { height: "70px" })
-  //     default:
-  //       TweenMax.to(ref1.current, 0.75, { height: "70px" })
-  //       TweenMax.to(ref2.current, 0.75, { height: "70px" })
-  //     // TweenMax.to(ref3.current, 0.75, { height: "70px" })
-  //   }
-  // }
-
   const showContent = e => {
-    console.log(content)
     const clickedCont = e.target.id
+    if (e.target.innerHTML === "... Read More") {
+      e.target.innerHTML = "... Show Less"
+    } else {
+      e.target.innerHTML = "... Read More"
+    }
     if (!content[clickedCont]) {
       setContent({ ...content, [clickedCont]: true })
       if (clickedCont === "pt3Read") {
