@@ -1,5 +1,5 @@
 import React from "react"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import Layout from "../components/layout.js"
 import "../styles/apps.scss"
 import addNoteGIF from "../components/gifs/addNote.gif"
@@ -8,6 +8,7 @@ import editAndDeleteGIF from "../components/gifs/editAndDelete.gif"
 import editAndDeleteIMG from "../images/editAndDelete.png"
 import sortAndSearchGIF from "../components/gifs/sortAndSearch.gif"
 import sortAndSearchIMG from "../images/sortAndSearch.png"
+import { TweenMax } from "gsap"
 
 const NoteTaker = () => {
   const [active, setActive] = useState()
@@ -16,6 +17,10 @@ const NoteTaker = () => {
     secondGif: false,
     thirdGif: false,
   })
+
+  const ref1 = useRef(null)
+  const ref2 = useRef(null)
+  const ref3 = useRef(null)
 
   const playGif = e => {
     const target = e.target.id
@@ -27,6 +32,20 @@ const NoteTaker = () => {
   }
 
   const cycleLeft = e => {
+    const id = e.target.id
+    if (id === "firstGifLeft") {
+      TweenMax.from(ref3.current, 1, { x: 0 })
+      TweenMax.to(ref3.current, 1, { x: -850 })
+    }
+    if (id === "secondGifLeft") {
+      console.log("called")
+      TweenMax.from(ref1.current, 1, { x: 0 })
+      TweenMax.to(ref1.current, 1, { x: -850 })
+    }
+    if (id === "thirdGifLeft") {
+      TweenMax.from(ref2.current, 1, { x: 0 })
+      TweenMax.to(ref2.current, 1, { x: -850 })
+    }
     switch (true) {
       case show.firstGif:
         setShow({ ...show, firstGif: false, thirdGif: true })
@@ -43,6 +62,19 @@ const NoteTaker = () => {
   }
 
   const cycleRight = e => {
+    const id = e.target.id
+    if (id === "firstGifRight") {
+      TweenMax.from(ref2.current, 1, { x: -1650 })
+      TweenMax.to(ref2.current, 1, { x: -850 })
+    }
+    if (id === "secondGifRight") {
+      TweenMax.from(ref3.current, 1, { x: -1650 })
+      TweenMax.to(ref3.current, 1, { x: -850 })
+    }
+    if (id === "thirdGifRight") {
+      TweenMax.from(ref1.current, 1, { x: -1650 })
+      TweenMax.to(ref1.current, 1, { x: -850 })
+    }
     switch (true) {
       case show.firstGif:
         setShow({ ...show, firstGif: false, secondGif: true })
@@ -143,22 +175,26 @@ const NoteTaker = () => {
                 </div>
                 <div className="bottomCont">
                   <div className="left" onClick={cycleLeft}>
-                    <i class="fas fa-chevron-left"></i>
+                    <i id="firstGifLeft" class="fas fa-chevron-left"></i>
                   </div>
-                  <img
-                    id="setSched"
-                    className="gifs"
-                    src={
-                      active && active.setSched
-                        ? sortAndSearchGIF
-                        : sortAndSearchIMG
-                    }
-                    alt="calendar"
-                    onMouseEnter={playGif}
-                    onMouseLeave={stopGif}
-                  />
+                  <div className="imgCont" ref={ref1}>
+                    <img className="gifs" src={addNoteIMG} alt="" />
+                    <img
+                      id="setSched"
+                      className="gifs"
+                      src={
+                        active && active.setSched
+                          ? sortAndSearchGIF
+                          : sortAndSearchIMG
+                      }
+                      alt="calendar"
+                      onMouseEnter={playGif}
+                      onMouseLeave={stopGif}
+                    />
+                    <img className="gifs" src={editAndDeleteIMG} alt="" />
+                  </div>
                   <div className="right" onClick={cycleRight}>
-                    <i class="fas fa-chevron-right"></i>
+                    <i id="firstGifRight" class="fas fa-chevron-right"></i>
                   </div>
                 </div>
               </div>
@@ -175,22 +211,26 @@ const NoteTaker = () => {
                 </div>
                 <div className="bottomCont">
                   <div className="left" onClick={cycleLeft}>
-                    <i class="fas fa-chevron-left"></i>
+                    <i id="secondGifLeft" class="fas fa-chevron-left"></i>
                   </div>
-                  <img
-                    id="confirmDenySched"
-                    className="gifs"
-                    src={
-                      active && active.confirmDenySched
-                        ? addNoteGIF
-                        : addNoteIMG
-                    }
-                    alt="calendar"
-                    onMouseEnter={playGif}
-                    onMouseLeave={stopGif}
-                  />
+                  <div className="imgCont" ref={ref2}>
+                    <img className="gifs" src={editAndDeleteIMG} alt="" />
+                    <img
+                      id="confirmDenySched"
+                      className="gifs"
+                      src={
+                        active && active.confirmDenySched
+                          ? addNoteGIF
+                          : addNoteIMG
+                      }
+                      alt="calendar"
+                      onMouseEnter={playGif}
+                      onMouseLeave={stopGif}
+                    />
+                    <img className="gifs" src={sortAndSearchIMG} alt="" />
+                  </div>
                   <div className="right" onClick={cycleRight}>
-                    <i class="fas fa-chevron-right"></i>
+                    <i id="secondGifRight" class="fas fa-chevron-right"></i>
                   </div>
                 </div>
               </div>
@@ -208,22 +248,26 @@ const NoteTaker = () => {
                 </div>
                 <div className="bottomCont">
                   <div className="left" onClick={cycleLeft}>
-                    <i class="fas fa-chevron-left"></i>
+                    <i id="thirdGifLeft" class="fas fa-chevron-left"></i>
                   </div>
-                  <img
-                    id="userRequestAppoint"
-                    className="gifs"
-                    src={
-                      active && active.userRequestAppoint
-                        ? editAndDeleteGIF
-                        : editAndDeleteIMG
-                    }
-                    alt="calendar"
-                    onMouseEnter={playGif}
-                    onMouseLeave={stopGif}
-                  />
+                  <div className="imgCont" ref={ref3}>
+                    <img className="gifs" src={sortAndSearchIMG} alt="" />
+                    <img
+                      id="userRequestAppoint"
+                      className="gifs"
+                      src={
+                        active && active.userRequestAppoint
+                          ? editAndDeleteGIF
+                          : editAndDeleteIMG
+                      }
+                      alt="calendar"
+                      onMouseEnter={playGif}
+                      onMouseLeave={stopGif}
+                    />
+                    <img className="gifs" src={addNoteIMG} alt="" />
+                  </div>
                   <div className="right" onClick={cycleRight}>
-                    <i class="fas fa-chevron-right"></i>
+                    <i id="thirdGifRight" class="fas fa-chevron-right"></i>
                   </div>
                 </div>
               </div>
