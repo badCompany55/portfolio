@@ -1,5 +1,5 @@
 import React from "react"
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import Layout from "../components/layout.js"
 import "../styles/apps.scss"
 import contScheduleGIF from "../components/gifs/contractorSetSchedule.gif"
@@ -20,6 +20,12 @@ const Pt3Scheduler = () => {
     thirdGif: false,
     fourthGif: false,
   })
+
+  useEffect(() => {
+    if (ref1) {
+      TweenMax.to(ref1.current, 0, { x: -850 })
+    }
+  }, ref1)
 
   const ref1 = useRef(null)
   const ref2 = useRef(null)

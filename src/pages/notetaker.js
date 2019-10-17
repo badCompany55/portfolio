@@ -1,5 +1,5 @@
 import React from "react"
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import Layout from "../components/layout.js"
 import "../styles/apps.scss"
 import addNoteGIF from "../components/gifs/addNote.gif"
@@ -18,6 +18,12 @@ const NoteTaker = () => {
     thirdGif: false,
   })
 
+  useEffect(() => {
+    if (ref1) {
+      TweenMax.to(ref1.current, 0, { x: -875 })
+    }
+  }, ref1)
+
   const ref1 = useRef(null)
   const ref2 = useRef(null)
   const ref3 = useRef(null)
@@ -35,16 +41,16 @@ const NoteTaker = () => {
     const id = e.target.id
     if (id === "firstGifLeft") {
       TweenMax.from(ref3.current, 1, { x: 0 })
-      TweenMax.to(ref3.current, 1, { x: -850 })
+      TweenMax.to(ref3.current, 1, { x: -870 })
     }
     if (id === "secondGifLeft") {
       console.log("called")
       TweenMax.from(ref1.current, 1, { x: 0 })
-      TweenMax.to(ref1.current, 1, { x: -850 })
+      TweenMax.to(ref1.current, 1, { x: -870 })
     }
     if (id === "thirdGifLeft") {
       TweenMax.from(ref2.current, 1, { x: 0 })
-      TweenMax.to(ref2.current, 1, { x: -850 })
+      TweenMax.to(ref2.current, 1, { x: -870 })
     }
     switch (true) {
       case show.firstGif:
@@ -65,15 +71,15 @@ const NoteTaker = () => {
     const id = e.target.id
     if (id === "firstGifRight") {
       TweenMax.from(ref2.current, 1, { x: -1650 })
-      TweenMax.to(ref2.current, 1, { x: -850 })
+      TweenMax.to(ref2.current, 1, { x: -870 })
     }
     if (id === "secondGifRight") {
       TweenMax.from(ref3.current, 1, { x: -1650 })
-      TweenMax.to(ref3.current, 1, { x: -850 })
+      TweenMax.to(ref3.current, 1, { x: -870 })
     }
     if (id === "thirdGifRight") {
       TweenMax.from(ref1.current, 1, { x: -1650 })
-      TweenMax.to(ref1.current, 1, { x: -850 })
+      TweenMax.to(ref1.current, 1, { x: -870 })
     }
     switch (true) {
       case show.firstGif:
