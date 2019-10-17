@@ -21,16 +21,16 @@ const Pt3Scheduler = () => {
     fourthGif: false,
   })
 
+  const ref1 = useRef(null)
+  const ref2 = useRef(null)
+  const ref3 = useRef(null)
+  const ref4 = useRef(null)
+
   useEffect(() => {
     if (ref1) {
       TweenMax.to(ref1.current, 0, { x: -850 })
     }
   }, ref1)
-
-  const ref1 = useRef(null)
-  const ref2 = useRef(null)
-  const ref3 = useRef(null)
-  const ref4 = useRef(null)
 
   const playGif = e => {
     const target = e.target.id
