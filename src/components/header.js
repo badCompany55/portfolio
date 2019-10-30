@@ -18,7 +18,7 @@ const Header = () => {
             <a href="https://github.com/badCompany55">
               <i className="fab fa-github-square"></i>
             </a>
-            <a href="#">
+            <a href="https://www.linkedin.com/in/zach-irvin/">
               <i className="fab fa-linkedin"></i>
             </a>
           </div>
