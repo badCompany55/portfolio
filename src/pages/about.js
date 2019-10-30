@@ -15,7 +15,7 @@ const AboutMe = () => {
             I break down and approach the challenge at hand.
           </p>
           <p className="about text">
-            The goal of everything that I make is to for it to be{" "}
+            The goal of everything that I make is for it to be{" "}
             <strong>intuitive, provide a fluid user interface, </strong> and be{" "}
             <strong> pleasing to the eye.</strong>
           </p>
