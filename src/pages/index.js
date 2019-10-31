@@ -57,7 +57,7 @@ const IndexPage = () => {
           <h1 className="mainHeading">Zachery Irvin</h1>
           <div className="subHeading">Full Stack Web Developer</div>
           <p className="text">
-            I am focused on creation and inovation through the use of concise
+            I am focused on creation and innovation through the use of concise
             programing. I love making amazing apps that provide a fluid and
             productive user experience.
           </p>
