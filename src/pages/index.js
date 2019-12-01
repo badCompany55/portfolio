@@ -87,7 +87,7 @@ const IndexPage = () => {
                 >
                   We were given the task to create a application that would
                   allow for scheduling of appointments between a contractor and
-                  client completly online. As with many things in the busy
+                  client completely online. As with many things in the busy
                   lifestyle that people lead, one doesn't always have time for a
                   phone conversation just for setting an appointment. This app
                   seeks to remedy this situation and provide an intuitive
