@@ -8,7 +8,7 @@ const Footer = () => {
         <a href="mailto:zachirvin45@gmail.com">
           <i className="fas fa-envelope-square"></i>
         </a>
-        <a href="https://github.com/badCompany55">
+        <a href="https://github.com/zacheryirvin">
           <i className="fab fa-github-square"></i>
         </a>
         <a href="https://www.linkedin.com/in/zach-irvin/">

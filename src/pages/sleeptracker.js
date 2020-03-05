@@ -58,6 +58,19 @@ const SleepTracker = () => {
                 </ul>
               </p>
             </div>
+            <div>
+              <h2 className="subHeading">My Contributions</h2>
+              <p className="text">
+                My Responsibilies on the project include the following...
+                <ul>
+                  <li>Design the structure and data flow of the backend.</li>
+                  <li>Design and implement the database schema.</li>
+                  <li>Creation and insertion of seed data for testing.</li>
+                  <li>Securing the backend via JWT.</li>
+                  <li>Utilization of the Jest testing framework to prevent regression.</li>
+                </ul>
+              </p>
+            </div>
             <div className="repo subHeading">
               <div className="github">
                 The <strong>Github</strong> repo can be found{" "}

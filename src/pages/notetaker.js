@@ -132,6 +132,18 @@ const NoteTaker = () => {
                 </ul>
               </p>
             </div>
+            <div>
+              <h2 className="subHeading">My Contributions</h2>
+              <p className="text">
+                This project was a personal project, as such every aspect of the project was designed and implement by myself. This includes but is not limited to:
+                <ul>
+                  <li>UI/UX desing of app</li>
+                  <li>Implementation of data flow from backend to front.</li>
+                  <li>State maangement of front end via redux.</li>
+                  <li>Animations, drag and drop ability, search ability, etc.</li>
+                </ul>
+              </p>
+            </div>
             <div className="gifCont">
               <div className="gifHeadCont">
                 <h2 className="subHeading gifHead">Demonstration</h2>

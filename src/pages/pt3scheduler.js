@@ -174,6 +174,20 @@ const Pt3Scheduler = () => {
                 amount of standard css animations.
               </p>
             </div>
+            <div>
+              <h2 className="subHeading">My Contributions</h2>
+              <p className="text">
+                My Responsibilies on the project include the following...
+                <ul>
+                  <li>Plan and Implementation of project with team.</li>
+                  <li>Creation of database schema.</li>
+                  <li>Fabrication of backend enpoinds / connection to the DB.</li>
+                  <li> Design of the client facing contactor calendar.</li>
+                  <li> Implementation of functionallity in calendar including animations for a crisp user experience.</li>
+                  <li> Implementation of complex state managment between customers and contactors.</li>
+                </ul>
+              </p>
+            </div>
             <div className="repo subHeading">
               <div className="github">
                 The <strong>Github</strong> repo can be found{" "}
