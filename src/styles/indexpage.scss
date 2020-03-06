@@ -1,3 +1,5 @@
+$phone: (max-width: 500px);
+
 .main {
 	width: 85%;
 	max-width: 700px;
@@ -38,6 +40,10 @@
 				color: rgba(41, 110, 133, 1);
 			}
 		}
+    @media ($phone) {
+      width: 100%;
+      text-align: center;
+    }
 	}
 	
 	div {
@@ -62,6 +68,10 @@
 
 	div {
 		width: 60%;
+
+    @media ($phone) {
+      width: 95%;
+    }
 
 		.indexHidden {
 			width: 100%;
@@ -95,6 +105,11 @@
 	}
 	.link {
 		width: 30%;
+
+    @media ($phone) {
+      width: 100%;
+      text-align: center;
+    }
 	}
 }
 

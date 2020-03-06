@@ -128,6 +128,8 @@ const IndexPage = () => {
                   during the day. This app offers a way to do this and is
                   accessible anywhere the one has an internet connection.
                 </p>
+                <p id="pt3Read" className="dots text">
+                </p>
               </div>
               <div className="link">
                 <Link to="/notetaker">{<NoteTakingImg />}</Link>

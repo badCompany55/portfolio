@@ -33,6 +33,11 @@ header {
 					a {
 						text-align: right;
 					}
+          @media (max-width: 500px) {
+            display: block;
+            width: 100%;
+            text-align: right;
+          }
 				}
 			}
 			.iconSubNav {
