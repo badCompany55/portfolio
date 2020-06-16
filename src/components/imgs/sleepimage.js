@@ -7,7 +7,7 @@ const SleepTrackerImg = () => {
     query {
       sleepTrackerImage: file(relativePath: { eq: "sleeptracker.png" }) {
         childImageSharp {
-          fixed(width: 187, height: 187) {
+          fixed(width: 250, height: 220) {
             ...GatsbyImageSharpFixed
           }
         }

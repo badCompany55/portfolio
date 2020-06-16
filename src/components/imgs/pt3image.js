@@ -18,7 +18,7 @@ const Pt3SchedulerImg = () => {
     query {
       pt3Image: file(relativePath: { eq: "pt3scheduler.png" }) {
         childImageSharp {
-          fixed(width: 187, height: 187) {
+          fixed(width: 250, height: 220) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -26,7 +26,7 @@ const Pt3SchedulerImg = () => {
     }
   `)
 
-  return <Img fixed={data.pt3Image.childImageSharp.fixed} />
+  return <Img classNameName="previewImage" fixed={data.pt3Image.childImageSharp.fixed}/>
 }
 
 export default Pt3SchedulerImg

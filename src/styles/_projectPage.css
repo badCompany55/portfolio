@@ -1,0 +1,268 @@
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.projectContainer {
+	margin-top: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	
+	.projectHeader {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		.title {
+			font-size: 2rem;
+			text-decoration: underline;
+			margin-bottom: 5px;
+			width: 100%;
+		}
+		.description {
+			font-size: 1.2rem;
+			margin-bottom: 5px;
+			width: 100%;
+		}
+		table {
+			margin-top: 30px;
+			font-size: 1.3rem;
+			border-collapse: separate;
+			border-spacing: 20px 5px;
+			border: 3px solid #2098D1;
+			border-radius: 10px;
+			width: 400px;
+			max-height: 220px;
+			
+			thead {
+				font-size: 1.5rem;
+				font-weight: bold;
+				text-align: left;
+			}
+			a {
+				color: purple;
+				font-weight: bold;
+				text-decoration: none;
+			}
+			
+			.techStack {
+				background-color: #2098D1;
+				border-radius: 5px;
+				padding: 5px;
+				color: white;
+			}
+		}
+		.imgCont {
+			margin-top: 30px;
+			display: flex;
+			width: 33%;
+			justify-content: center;
+			align-items: center;
+			margin-left: 5px;
+			
+			.previewImage {
+				border-radius: 10px;
+			}
+		}
+	}
+	
+	.summary {
+		width: 100%;
+		margin-top: 30px;
+		.fa-cog {
+			-webkit-animation: rotating 2s linear infinite;
+			-moz-animation: rotating 2s linear infinite;
+			-ms-animation: rotating 2s linear infinite;
+			-o-animation: rotating 2s linear infinite;
+			animation: rotating 2s linear infinite;
+		}
+		.fas {
+			font-size: 2.5rem;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			color: purple;
+		}
+		h3 {
+			font-size: 1.7rem;
+			width: 100%
+		}
+		
+		article {
+			border: 2px solid lightgray;
+			width: 100%;
+			border-radius: 10px;
+			padding: 5px;
+			margin-top: 10px;
+			font-size: 1.1rem;
+			padding-bottom: 15px;
+			.head {
+				display: flex;
+				align-items: center;
+				width: 160px;
+				justify-content: left;
+				h4 {
+					font-size: 1.4rem;
+					text-decoration: underline;
+					padding-bottom: 5px;
+					margin-left: 15px;
+				}
+			}
+			ul li {
+				list-style: circle;
+				margin-left: 20px;
+				padding-top: 5px;
+			}			
+		}
+	}
+		.messCarousel {
+		@include displayProject
+		width: 400px;
+		
+		.scrollLink {
+			@include navButton
+			font-weight: bold;
+			margin: 2px;
+			margin-right: -.5px;
+		}
+		.scrollLink:first-child {
+			border-left: none;
+		}
+		.active {
+			font-weight: bold;
+			border: 1px solid black;
+			margin: 2px;
+			padding-left: 5px;
+			padding-right: 5px;
+			text-decoration: none;
+			color: black;
+			margin-right: -.5px;
+			border-bottom: 7px solid #2098D1;
+			border-radius: 10px;
+			&:focus {
+				outline: 0;
+			}
+		}
+		.messSlides {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			justify-content: flex-end;
+			overflow-x: hidden;
+			scroll-snap-type: x mandatory;
+			scroll-behavior: smooth;
+			-webkit-overflow-scrolling: touch;
+			width: 400px;
+			height: 100%;
+			
+			.gifs {
+				margin-top: 20px;
+				border-radius: 10px;
+				height: 100%;
+				width: 100%;
+				margin: 20px;
+				background-size: cover;
+				scroll-snap-align: start;
+				transform-origin: center center;
+				transform: scale(1);
+				transition: .5s;
+				position: relative;
+				margin-bottom: 30px;
+			}
+		}
+	}
+
+	.carousel {
+		@include displayProject
+		
+		.scrollLink {
+			@include navButton
+			font-weight: bold;
+			margin: 2px;
+			margin-right: -.5px;
+		}
+		.scrollLink:first-child {
+			border-left: none;
+		}
+		.active {
+			font-weight: bold;
+			border: 1px solid black;
+			margin: 2px;
+			padding-left: 5px;
+			padding-right: 5px;
+			text-decoration: none;
+			color: black;
+			margin-right: -.5px;
+			border-bottom: 7px solid #2098D1;
+			border-radius: 10px;
+			&:focus {
+				outline: 0;
+			}
+		}
+		.slides {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			justify-content: center;
+			overflow-x: hidden;
+			scroll-snap-type: x mandatory;
+			scroll-behavior: smooth;
+			-webkit-overflow-scrolling: touch;
+			width: 100%;
+			height: 100%;
+			
+			.gifs {
+				margin-top: 20px;
+				border-radius: 10px;
+				height: 100%;
+				width: 100%;
+				margin: 20px;
+				background-size: cover;
+				scroll-snap-align: start;
+				transform-origin: center center;
+				transform: scale(1);
+				transition: .5s;
+				position: relative;
+				margin-bottom: 30px;
+			}
+		}
+	}
+}
+
+	.picGrid {
+		@include displayProject
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		justify-content: space-around;
+		
+		.picWrap {
+			border: 1px solid lightgray;
+			padding: 8px;
+			border-radius: 10px;
+			margin: 8px;
+		}
+	}

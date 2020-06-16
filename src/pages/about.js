@@ -1,6 +1,5 @@
 import React from "react"
 import Layout from "../components/layout.js"
-import "../styles/about.scss"
 
 const AboutMe = () => {
   return (

@@ -18,7 +18,7 @@ const NoteTakingImg = () => {
     query {
       pt3Image: file(relativePath: { eq: "noteTakingApp.png" }) {
         childImageSharp {
-          fixed(width: 200, height: 200) {
+          fixed(width: 250, height: 190) {
             ...GatsbyImageSharpFixed
           }
         }
