@@ -1,7 +1,7 @@
 .mobileHeaderOpen, .mobileHeaderClose {
 	display: flex;
 	align-items: center;
-	nav {
+	.mobileNav {
 		height: 35vh;
 		display: flex;
 		flex-direction: column;

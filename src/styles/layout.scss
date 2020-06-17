@@ -83,12 +83,12 @@
 		justify-content: space-between;
 		width: 75%;
 		max-width: 400px; 
-		@media screen and (max-width: 500px) {
-			display: none;
-		
 		a {
 			@include navButton;
 		}
+		@media screen and (max-width: 500px) {
+			display: none;
+		
 	}
 }
 

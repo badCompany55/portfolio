@@ -9,7 +9,7 @@ const MobileNav = (props) => {
 	})
 	return (
 		<header className={currentClass || props.class}>
-			<nav>
+			<nav className="mobileNav">
 				<Link to="/">Projects</Link>
 				<Link to="/about">About</Link>
 				<Link to="/contact">Contact</Link>
