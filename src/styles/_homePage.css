@@ -117,11 +117,22 @@ $max: 130px;
 	padding-bottom: 23px;
 	padding-left: 15px;
 	
+	@media screen and (max-width: 500px) {
+		flex-wrap: wrap;
+		height: 200px;
+		padding-bottom: 0px;
+		padding-left: 7px;
+	}
+	
 	.divider {
 		display: flex;
 		justify-content: flex-start;	
 		align-items: flex-end;
 		width: 55%;
+		@media screen and (max-width: 500px) {
+			width: 100%;
+			padding-bottom: 5px;
+		}
 		.bar {
 			width: 40px;
 			animation: elevator 10s 0s infinite;
@@ -132,6 +143,10 @@ $max: 130px;
 		}
 		p {
 			font-size: 1.3rem;
+			display: flex;
+			width: 99%;
+			align-items: flex-end;
+			padding-top: 20px;
 		}
 	
 	}

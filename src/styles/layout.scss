@@ -4,13 +4,70 @@
 @import '/homePage';
 @import '/contact';
 @import '/about';
+@import '/mobileHeader';
+
+@keyframes slideIn {
+	0% {
+		width: 0;
+		left: 100%;
+	}
+	100% {
+		width: 100%;
+		left: 0;
+		opacity: .95
+	}
+}
+
+@keyframes slideOut {
+	0% {
+		width: 100%;
+		left: 0;
+	}
+	100% {
+		width: 0;
+		left: 100%;
+	}
+}
 
 .outerContainer {
 	max-width: 800px;
+	max-height: 1800px;
 	margin: 0 auto;
 	
 	.innerContainer {
 		margin: 20px;
+
+		.mobileHeaderOpen {
+			position: fixed;
+			top: 0;
+			right: 0;
+			left: 0;
+			overflow: hidden;
+			z-index: 9;
+			width: 0;
+			height: 100vh;
+			background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(32,152,209,1) 35%, rgba(0,212,255,1) 100%); 
+			animation: slideIn .3s;
+			-webkit-animation-fill-mode: forwards;
+			animation-fill-mode: forwards;
+		}
+		.mobileHeaderClose {
+			position: fixed;
+			top: 0;
+			right: 0;
+			left: 0;
+			overflow: hidden;
+			z-index: 9;
+			width: 100%;
+			height: 100vh;
+			background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(32,152,209,1) 35%, rgba(0,212,255,1) 100%); 
+			animation: slideOut .3s;
+			-webkit-animation-fill-mode: forwards;
+			animation-fill-mode: forwards;
+		}
+		.hidden {
+			display: none;
+		}
 	}
 }
 
@@ -19,16 +76,40 @@
 	justify-content: space-between;
 	align-items: center;
 	font-weight: bold;
-	font-size: 2rem; 
+	font-size: 2rem;
 
-	nav {
+	.headerNav {
 		display: flex;
 		justify-content: space-between;
 		width: 75%;
 		max-width: 400px; 
+		@media screen and (max-width: 500px) {
+			display: none;
 		
 		a {
 			@include navButton;
 		}
 	}
 }
+
+}
+
+.fa-bars {
+	display: none;
+	color: white;
+	
+	@media screen and (max-width: 500px) {
+		display: block;
+		position: fixed;
+		bottom: 15px;
+		right: 35px;
+		font-size: 2.2rem;
+		z-index: 10;
+		color: black;
+		background-color: white;
+		padding: 5px;
+		border-radius: 10px;
+	}
+}
+
+

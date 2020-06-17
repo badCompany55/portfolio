@@ -1,11 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link} from 'gatsby'
 
-const Header = () => {
+
+const MobileNav = (props) => {
+	const [currentClass, setCurrentClass] = useState(null)
+	const navClick = ((e) => {
+		setCurrentClass('mobileHeaderClose')
+	})
 	return (
-		<header className="mainHeader">
-		<p>Zach Irvin</p>
-			<nav className="headerNav">
+		<header className={currentClass || props.class}>
+			<nav>
 				<Link to="/">Projects</Link>
 				<Link to="/about">About</Link>
 				<Link to="/contact">Contact</Link>
@@ -15,5 +19,4 @@ const Header = () => {
 		</header>
 	)
 }
-
-export default Header
+export default MobileNav

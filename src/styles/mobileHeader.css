@@ -1,0 +1,17 @@
+.mobileHeaderOpen, .mobileHeaderClose {
+	display: flex;
+	align-items: center;
+	nav {
+		height: 35vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		font-size: 3rem;
+		
+		a {
+			color: white;
+			text-decoration: none;
+			padding: 5px;
+		}
+	}
+}

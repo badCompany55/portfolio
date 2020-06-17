@@ -27,11 +27,12 @@ const Tracker = () => {
 						<tbody>
 							<tr>
 								<td className="techStack">React</td>
-								<td><a href= "https://github.com/sleep-tracker-pt">LINK</a></td>
+								<td><a href= "https://github.com/sleep-tracker-pt/bw-sleep-tracker-pt-fe">FRONT</a></td>
 								<td>N/A</td>
 							</tr>
 							<tr>
 								<td className="techStack">NodeJS</td>
+								<td><a href= "https://github.com/sleep-tracker-pt/bw-sleep-tracker-pt-be"> BACK</a></td>
 							</tr>
 							<tr>
 								<td className="techStack">PostgresQL</td>
